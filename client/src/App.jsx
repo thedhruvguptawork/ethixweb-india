@@ -311,7 +311,16 @@ function App() {
             {navigation.map(([label, href]) => <a key={href} href={href} className="transition hover:text-white">{label}</a>)}
           </nav>
           <a href="#contact" className="hidden items-center gap-2 rounded-full bg-[#ed3945] px-5 py-3 text-sm font-semibold transition hover:bg-[#ff4b56] sm:flex">Let's talk <ArrowUpRight size={16} /></a>
-          <button onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} className="rounded-lg border border-white/10 p-2 lg:hidden">{menuOpen ? <X size={22} /> : <Menu size={22} />}</button>
+          
+<a
+  href="/admin"
+  className="rounded-lg bg-green-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-green-700"
+>
+  Admin Login
+</a>
+```
+          <button onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} className="rounded-lg border border-white/10 p-2 lg:hidden">{menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
         {menuOpen && <nav className="absolute left-0 right-0 top-full flex flex-col gap-5 border-b border-white/10 bg-[#160d0f] px-6 py-7 lg:hidden">{navigation.map(([label, href]) => <a key={href} href={href} onClick={closeMenu} className="transition hover:text-red-400">{label}</a>)}<a href="#contact" onClick={closeMenu} className="font-semibold text-red-400">Start a project ↗</a></nav>}
       </header>
